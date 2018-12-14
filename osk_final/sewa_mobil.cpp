@@ -41,17 +41,17 @@ main()
 
 
 	jump:
-
-	cursor(2,1);
+    frame1(1, 50, 0, 15);
+    cursor(3,3);
 	cout<<"Identitas Pelanggan";
-	cursor(2,3);
+	cursor(3,4);
 	cout<<"Nama		: ";
 	cin>>name181;
-	cursor(2,4);
+	cursor(3,5);
 	cout<<"No KTP	: ";
 	cin>>KTP181;
-	cursor(2,5);
-	cout<<"No HP		: ";
+	cursor(3,6);
+	cout<<"No HP        : ";
 	cin>>HP181;
 
 	//ambil value
@@ -60,7 +60,13 @@ main()
 	hp = HP181;
 
 
-	cursor(2,9);
+	cursor(3,8);
+	for (int i=2; i <= 49;i++){
+
+        cursor(i, 7);
+        cout << char(205);
+	}
+	cursor(3, 8);
 	cout<<"Apakah data sudah benar? Y/N : ";
 
 	cin>>verifikasi;
@@ -87,11 +93,7 @@ main()
 
 		}else
 		{
-		frame(0,100,15,17);
-		cursor(3,16);
-		color (4);
-		cout<<"Periksa Identitas atau Penulisan Verifikasi...";
-		getch();
+
 		system("cls");
 		color (7);
 		goto jump;
@@ -253,7 +255,7 @@ void title()
 	cursor(36,a);
 	cout<<"HARGA SEWA";
 	cursor(53,a);
-	cout<<"LAMA SEWA";
+	cout<<"LAMA SEWA / JAM";
 	cursor(70,a);
 	cout<<"PAJAK";
 	cursor(88,a);
@@ -288,17 +290,17 @@ void dt_mobil()
 	cursor(b,10);cout<<"Kijang";
 	cursor(b,11);cout<<"BMW Sedan";
 	//harga
-	cursor(c,7);cout<<"500.000";
-	cursor(c,8);cout<<"300.000";
-	cursor(c,9);cout<<"900.000";
-	cursor(c,10);cout<<"150.000";
-	cursor(c-2,11);cout<<"1.500.000";
+	cursor(c,7);cout<<"Rp. 500.000";
+	cursor(c,8);cout<<"Rp. 300.000";
+	cursor(c,9);cout<<"Rp. 900.000";
+	cursor(c,10);cout<<"Rp. 150.000";
+	cursor(c-2,11);cout<<"Rp. 1.500.000";
 	//sewa
-	cursor(d,7);cout<<"200.000";
-	cursor(d,8);cout<<"150.000";
-	cursor(d,9);cout<<"350.000";
-	cursor(d,10);cout<<"100.000";
-	cursor(d,11);cout<<"400.000";
+	cursor(d,7);cout<<"Rp. 200.000";
+	cursor(d,8);cout<<"Rp. 150.000";
+	cursor(d,9);cout<<"Rp. 350.000";
+	cursor(d,10);cout<<"Rp. 100.000";
+	cursor(d,11);cout<<"Rp. 400.000";
 
 }
 
@@ -314,13 +316,13 @@ void laporan()
 	cursor(22,a);
 	cout<<jns;
 	cursor(39,a);
-	cout<<hrg;
+	cout<<"Rp. "<<hrg;
 	cursor(59,a);
 	cout<<hari;
 	cursor(73,a);
-	cout<<tax;
+	cout<<"Rp. "<<tax;
 	cursor(89,a);
-	cout<<result;
+	cout<<"Rp. "<<result;
 	cursor(0,18);
 	getch();
 	system("cls");
@@ -331,8 +333,6 @@ void laporan()
 
 void Data_Mobil()
 {
-
-
 	string Choose181;
 	int rtail181, bayar181;
 
@@ -506,7 +506,7 @@ void tabel_Data()
 	int a = 5;
 	cursor(10,a);cout<<"Kode";
 	cursor(32,a);cout<<"Jenis Mobil";
-	cursor(57,a);cout<<"Sewa";
+	cursor(57,a);cout<<"Sewa / JAM";
 	cursor(82,a);cout<<"Pajak";
 	dt_mobil();
 
